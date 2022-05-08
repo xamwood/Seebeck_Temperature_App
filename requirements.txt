@@ -1,0 +1,10 @@
+pandas
+
+numpy
+
+copy
+
+matplotlib
+
+csv
+
