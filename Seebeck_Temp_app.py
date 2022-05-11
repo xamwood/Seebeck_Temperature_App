@@ -18,9 +18,7 @@ ke = 8.617333262145*10**(-5)
 st.write(
     """
 #  Seebeck Temperature Checker
-Upload your seebeck data to see if it strays from a single parabolic band model
-
-### Made by Max Wood 
+Upload your seebeck data to see if it strays from a single parabolic band model 
 """
 )
 
@@ -164,6 +162,7 @@ if uploaded_file:
 
     st.write(fig)
 
+st.write(""" #####Made by Max Wood""")
         
 
 
