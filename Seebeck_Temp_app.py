@@ -69,10 +69,9 @@ if uploaded_file:
         st.stop()
         
         
-    with open('data3.npy', 'rb') as f: data2 = np.load(f)
-    data = data2[:,175:,:]
-    data_aps = data2[:301,175:,:] # the high cc values aren't realistic and messing with plotting
-    data_iis = data2[:,175:,:]
+    with open('data3.npy', 'rb') as f: data = np.load(f)
+    data_aps = data[:,:,:] # the high cc values aren't realistic and messing with plotting
+    data_iis = data[:,:,:]
     Tlow = np.float(df[ab].min())
     Tmax = np.float(df[ab].max())
     Tsel = st.number_input('Temperature to base Seebeck',
