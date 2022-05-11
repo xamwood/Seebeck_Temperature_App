@@ -65,7 +65,7 @@ if uploaded_file:
         submit_button = st.form_submit_button(label="Submit")
 
     if not ab or not result:
-        st.warning("ERROR ERROR ERROR!")
+        st.warning("Please select which column is Seebeck and which column is temperature")
         st.stop()
     
         
