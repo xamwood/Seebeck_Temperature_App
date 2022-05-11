@@ -19,6 +19,8 @@ st.write(
     """
 #  Seebeck Temperature Checker
 Upload your seebeck data to see if it strays from a single parabolic band model
+
+### Made by Max Wood 
 """
 )
 
