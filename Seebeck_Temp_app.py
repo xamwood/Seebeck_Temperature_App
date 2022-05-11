@@ -68,11 +68,6 @@ if uploaded_file:
         st.warning("ERROR ERROR ERROR!")
         st.stop()
     
-    if df[result][0] < 0:
-        cor = -1
-        
-    if df[result][0] < 0:
-        cor = 1
         
     with open('data3.npy', 'rb') as f: data = np.load(f)
     data_aps = data[:,:,:] # the high cc values aren't realistic and messing with plotting
