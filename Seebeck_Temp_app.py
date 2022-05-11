@@ -69,7 +69,7 @@ if uploaded_file:
         st.stop()
         
         
-    with open('data2.npy', 'rb') as f: data2 = np.load(f)
+    with open('data3.npy', 'rb') as f: data2 = np.load(f)
     data = data2[:,175:,:]
     data_aps = data2[:301,175:,:] # the high cc values aren't realistic and messing with plotting
     data_iis = data2[:,175:,:]
