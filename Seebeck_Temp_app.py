@@ -67,7 +67,12 @@ if uploaded_file:
     if not ab or not result:
         st.warning("ERROR ERROR ERROR!")
         st.stop()
+    
+    if df[result][0] < 0:
+        cor = -1
         
+    if df[result][0] < 0:
+        cor = 1
         
     with open('data3.npy', 'rb') as f: data = np.load(f)
     data_aps = data[:,:,:] # the high cc values aren't realistic and messing with plotting
@@ -102,12 +107,12 @@ if uploaded_file:
     if aps:
         ax.plot(
             data[n_loc_aps,T_loc_min-5:T_loc_max+5,0],
-            data[n_loc_aps,T_loc_min-5:T_loc_max+5,4]*10**6,
+            data[n_loc_aps,T_loc_min-5:T_loc_max+5,4]*cor*10**6,
             label = 'λ = 0 (APS)')
     if iis:
         ax.plot(
             data[n_loc_iis,T_loc_min-20:T_loc_max+20,0],
-            data[n_loc_iis,T_loc_min-20:T_loc_max+20,3]*10**6,
+            data[n_loc_iis,T_loc_min-20:T_loc_max+20,3]*cor*10**6,
             label = 'λ = 2 (IIS)')
     ax.legend()
 
