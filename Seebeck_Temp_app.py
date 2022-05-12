@@ -67,7 +67,11 @@ if uploaded_file:
     if not ab or not result:
         st.warning("Please select which column is Seebeck and which column is temperature")
         st.stop()
-    df[ab] = df[ab].abs()
+    
+    ### right now I'm taking the absolute value of Seebeck
+    ### This doesn't influence the analysis but might confuse people
+    ### eventually I want to plot negative values if given
+    df[result] = df[result].abs()
         
     with open('data3.npy', 'rb') as f: data = np.load(f)
     data_aps = data[:,:,:] # the high cc values aren't realistic and messing with plotting
