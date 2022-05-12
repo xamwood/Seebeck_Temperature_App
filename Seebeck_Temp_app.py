@@ -162,7 +162,7 @@ if uploaded_file:
 
     st.write(fig)
 
-st.write(""" #### Made by Max Wood""")
+st.write(""" ##### Made by Max Wood""")
         
 
 
