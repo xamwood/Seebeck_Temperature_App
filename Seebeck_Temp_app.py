@@ -67,7 +67,7 @@ if uploaded_file:
     if not ab or not result:
         st.warning("Please select which column is Seebeck and which column is temperature")
         st.stop()
-    
+    df[ab] = df[ab].abs()
         
     with open('data3.npy', 'rb') as f: data = np.load(f)
     data_aps = data[:,:,:] # the high cc values aren't realistic and messing with plotting
