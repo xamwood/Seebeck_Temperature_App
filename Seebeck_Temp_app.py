@@ -76,15 +76,15 @@ if uploaded_file:
     with open('data3.npy', 'rb') as f: data = np.load(f)
     data_aps = data[:,:,:] # the high cc values aren't realistic and messing with plotting
     data_iis = data[:,:,:]
-    Tlow = np.float(df[ab].min())
-    Tmax = np.float(df[ab].max())
+    Tlow = float(df[ab].min())
+    Tmax = float(df[ab].max())
     Tsel = st.number_input('Temperature to base Seebeck',
                            value = Tlow, 
                            min_value = Tlow,
                            max_value = Tmax)
     Tsel_loc = np.argmin(abs(df[ab]-Tsel))
-    Seebsel= np.float(df[result].iloc[Tsel_loc])
-    Tsel_really = np.float(df[ab].iloc[Tsel_loc]) # this grabs the closest temp to what the user inputs
+    Seebsel= float(df[result].iloc[Tsel_loc])
+    Tsel_really = float(df[ab].iloc[Tsel_loc]) # this grabs the closest temp to what the user inputs
     
     T_loc = np.argmin(abs(data[0,:,0]-Tsel_really))
     T_loc_min = np.argmin(abs(data[0,:,0]-Tlow))
